@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>상품 목록</h3>
+    <table border="1">
+        <tr>
+            <th>번호</th><th>상품명</th><th>상품정보</th><th>상품가격</th><th>등록일</th>
+        </tr>
+        <tr th:each="entry,status:${items}" th:with="item=${entry.value}">
+            <td th:text="${item.id}"></td>
+            <td th:text="${item.itemNm}"></td>
+            <td th:text="${item.itemDetail}"></td>
+            <td th:text="${item.price}"></td>
+            <td th:text="${item.regTime}"></td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h3>상품 정보 입력</h3>
+  <form th:action="@{/thymeleaf/ex09r}" th:object="${itemDto}" method="post">
+    <table>
+      <tr>
+        <td>상품명</td>
+        <td>
+          <input type="text" name="itemNm" placeholder="상품명 입력">
+        </td>
+      </tr>
+      <tr>
+        <td>상품 상세 정보</td>
+        <td>
+          <input type="text" th:field="*{itemDetail}" placeholder="상품 상세 정보 입력">
+        </td>
+      </tr>
+      <tr>
+        <td>상품 가격</td>
+        <td>
+          <input type="text" th:field="*{price}" placeholder="상품 가격 입력 입력">
+        </td>
+      </tr>
+    </table>
+    <input type ="submit" value="입력"/>
+  </form>
+</body>
+</html>

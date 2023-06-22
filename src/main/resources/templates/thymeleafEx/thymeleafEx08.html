@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<table border="1">
+  <tr th:each="entry, status : ${items}" th:style="${status.odd}?'color:red;':'color:blue;'">
+    <td>[[${entry.key}]]</td>
+    <td th:text="${entry.value.itemNm}"></td>
+    <td th:text="${#strings.replace(entry.value.itemDetail,'더미','테스트')}"></td>
+    <td th:text="${entry.value.price}"></td>
+    <td th:text="${#strings.substring(entry.value.regTime,0,4)+'년'}"></td>
+  </tr>
+</table>
+</body>
+</html>
